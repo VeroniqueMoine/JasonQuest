@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/VeroniqueMoine/JasonQuest#readme",
   "dependencies": {
+    "dotenv": "^16.0.1",
     "ejs": "^3.1.8",
     "express": "^4.18.1"
   }
