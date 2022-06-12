@@ -1,14 +1,24 @@
-require('dotenv').config();
+// a remplacer si pas de if (process.env....) require('dotenv').config();
+const dotenv = require('dotenv');
 // Je require express pour l'utiliser
 const express = require('express');
 // Je lance express
 const app = express();
 
+const http = require('http');
+
+
+if (process.env.NODE_ENV !== 'production') {
+    dotenv.config();
+}
+
+//const app = require('./app');
+
 // je fais le lien avec mon router
 const router = require('./app/router');
 
 // Je créer mon port pour afficher ma page sur localhost_, 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 4000;
 
 // je défini mon moteur de rendus
 app.set('view engine', 'ejs');
@@ -20,11 +30,18 @@ app.use(express.static('integration'));
 
 express.urlencoded({extended: true});
 
+const server = http.createServer(app);
+
 // je lance mon router
 app.use(router);
 
-// je lance mon server et je le teste dans ma console 
 
-app.listen(PORT, () => {
-    console.log(`Serveur : http://localhost:${PORT} fonctionnel`)
+
+// app.listen(PORT, () => {
+//     console.log(`Serveur : http://localhost:${PORT} fonctionnel`)
+// });
+
+// je lance mon server et je le teste dans ma console 
+server.listen(PORT, () => {
+    console.log(`http://localhost:${PORT} fonctionnel`);
 });

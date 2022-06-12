@@ -1,10 +1,12 @@
 // Je require express pour l'utiliser
 const express = require('express');
+const argonauteController = require('./controllers/api/argonauteController');
 // Je lance express
 const router = express.Router();
-const mainController = require ('./controllers/mainController');
+const argonaute = require ('./controllers/api/argonauteController');
 
-router.get('/', mainController.homePage);
+router.get('/', argonauteController.getAllArgonautes);
 
+//router.get('/api', )
 
 module.exports = router;
