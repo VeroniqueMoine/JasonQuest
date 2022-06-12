@@ -18,7 +18,7 @@ app.set('views', './app/views');
 //je défini mon dossier statique
 app.use(express.static('integration'));
 
-//express.urlencoded({extended: true});
+express.urlencoded({extended: true});
 
 // je lance mon router
 app.use(router);

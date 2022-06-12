@@ -1,3 +1,5 @@
+const DataMapper = require("../datamapper");
+
 const mainController = {
 
     homePage: (req,res)=>{
