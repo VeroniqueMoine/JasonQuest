@@ -5,7 +5,10 @@ const argonauteController = require('./controllers/api/argonauteController');
 const router = express.Router();
 const argonaute = require ('./controllers/api/argonauteController');
 
+
+/* argonautes */
 router.get('/', argonauteController.getAllArgonautes);
+router.post('/argonaute', argonauteController.addArgonaute);
 
 //router.get('/api', )
 
