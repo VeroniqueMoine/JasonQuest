@@ -1,0 +1,22 @@
+################################################################################
+# Test file for the HTTP routes
+# To be able to use it, you need REST Client extension on your VSCode
+# https://marketplace.visualstudio.com/items?itemName=humao.rest-client
+################################################################################
+
+### service indisponible
+//GET http://localhost:3001/404
+
+############################## PROJECTS #############################
+
+### get all the argonautes
+GET http://localhost:3000/
+
+### récupération d'une liste
+POST http://localhost:3000/argonaute HTTP/1.1
+
+content-type: application/json
+
+{
+    "argonaute": "Test",
+}
