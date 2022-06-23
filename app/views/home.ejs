@@ -2,7 +2,7 @@
   
   <!-- Main section -->
   <main>
-    
+    <div class="container">
     <!-- New member form -->
     <h2 class="add-member-title">Ajouter un(e) Argonaute</h2>
     <% if (locals.error) { %> 
@@ -12,7 +12,7 @@
       <p class="error"><%=succeed%></p>
       <% }  %> 
     <form class="new-member-form" action="/argonaute" method="POST">
-      <label for="name">Nom de l&apos;Argonaute</label>
+      <label for="name">Nom de l'Argonaute</label>
       <input id="name" name="name" type="text" placeholder="Charalampos" />
       <button class="button-form" type="submit">Envoyer</button>
     </form>
@@ -20,12 +20,13 @@
     <!-- Member list -->
     <h2>Membres de l'équipage</h2>
    
-    <section class="member-list">
+    <section class="member-list-all">
     <% for (const argonaute of listOfArgonautes) { %> 
     <section class="member-list">
       <div class="member-item"><%= argonaute.name %></div>
     </section>
     <% } %>
+    </div>
   </main>
 
   <%- include('partials/footer')%>
